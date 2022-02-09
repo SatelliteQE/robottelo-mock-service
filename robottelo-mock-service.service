@@ -2,7 +2,7 @@
 Description=Mock service for robottelo tracer tests
 
 [Service]
-ExecStart=/usr/bin/robottelo-mock-service.sh
+ExecStart=/usr/bin/robottelo-mock-service
 
 [Install]
 WantedBy=multi-user.target

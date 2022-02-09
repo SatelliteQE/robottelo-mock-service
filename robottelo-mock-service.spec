@@ -7,27 +7,30 @@ URL:           https://github.com/ogajduse/robottelo-mock-service
 Source0:       %{url}/archive/refs/tags/%{version}.tar.gz
 
 BuildRequires: systemd-rpm-macros
+BuildRequires:  gcc
+BuildRequires:  make
 
 %{?systemd_requires}
 Requires:      bash
-
-BuildArch:     noarch
 
 %description
 This package provides simple mock service that serves for katello-tracer testing
 in robottelo.
 
+%global debug_package %{nil}
+
 %prep
 %setup -q
 
 %build
+%make_build
 
 %install
+rm -rf %{buildroot}
+%make_install
+
 mkdir -p %{buildroot}/%{_unitdir}
 install -m 0644 %{name}.service %{buildroot}/%{_unitdir}/%{name}.service
-
-mkdir -p %{buildroot}/%{_bindir}
-install -m 0755 %{name}.sh %{buildroot}/%{_bindir}/%{name}.sh
 
 mkdir -p --mode=0700 $RPM_BUILD_ROOT/%{_var}/log/%{name}
 
@@ -43,7 +46,7 @@ mkdir -p --mode=0700 $RPM_BUILD_ROOT/%{_var}/log/%{name}
 %files
 %license LICENSE
 
-%{_bindir}/%{name}.sh
+%{_bindir}/%{name}
 %{_unitdir}/%{name}.service
 %attr(-,root,-) %dir %{_var}/log/%{name}
 
