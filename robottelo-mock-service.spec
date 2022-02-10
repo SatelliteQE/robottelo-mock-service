@@ -1,5 +1,5 @@
 Name:          robottelo-mock-service
-Version:       0.0.2
+Version:       0.0.3
 Release:       1%{?dist}
 Summary:       Simple mock service for katello-tracer testing in robottelo
 License:       GPLv3+
@@ -50,6 +50,9 @@ mkdir -p --mode=0700 $RPM_BUILD_ROOT/%{_var}/log/%{name}
 %attr(-,root,-) %dir %{_var}/log/%{name}
 
 %changelog
+* Thu Feb 10 2022 Ondřej Gajdušek <ogajduse@redhat.com> 0.0.3-1
+- new package built with tito
+
 * Wed Feb 09 2022 Ondřej Gajdušek <ogajduse@redhat.com> - 0.0.2-1
 - Bump version to 0.0.2
 
