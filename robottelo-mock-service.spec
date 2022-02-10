@@ -17,12 +17,11 @@ Requires:      bash
 This package provides simple mock service that serves for katello-tracer testing
 in robottelo.
 
-%global debug_package %{nil}
-
 %prep
 %setup -q
 
 %build
+%set_build_flags
 %make_build
 
 %install

@@ -2,7 +2,7 @@
 DESTDIR?=
 
 CC=gcc
-CFLAGS=-I.
+override CFLAGS := -I. $(CFLAGS)
 
 RMS=robottelo-mock-service
 
