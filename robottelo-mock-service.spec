@@ -1,5 +1,5 @@
 Name:          robottelo-mock-service
-Version:       0.0.5
+Version:       0.0.6
 Release:       1%{?dist}
 Summary:       Simple mock service for katello-tracer testing in robottelo
 License:       GPLv3+
@@ -54,6 +54,9 @@ mkdir -p --mode=0700 $RPM_BUILD_ROOT/%{_var}/log/%{name}
 %attr(-,root,-) %dir %{_var}/log/%{name}
 
 %changelog
+* Thu Feb 10 2022 Ondřej Gajdušek <ogajduse@redhat.com> 0.0.6-1
+- Remove shell script service, tweak Readme and spec (ogajduse@redhat.com)
+
 * Thu Feb 10 2022 Ondřej Gajdušek <ogajduse@redhat.com> 0.0.5-1
 - Add README contents, fix build for rhel7 (ogajduse@redhat.com)
 
