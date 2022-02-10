@@ -1,5 +1,7 @@
 # robottelo-mock-service
 
+[![Copr build status](https://copr.fedorainfracloud.org/coprs/ogajduse/robottelo-mock-service/package/robottelo-mock-service/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/ogajduse/robottelo-mock-service/package/robottelo-mock-service/)
+
 This package provides simple mock service that serves for
 katello-tracer testing in robottelo.
 
