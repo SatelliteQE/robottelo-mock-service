@@ -6,12 +6,16 @@ License:       GPLv3+
 URL:           https://github.com/ogajduse/robottelo-mock-service
 Source0:       %{name}-%{version}.tar.gz
 
+%if 0%{?rhel} < 8
+BuildRequires: systemd
+%else
 BuildRequires: systemd-rpm-macros
+%{?systemd_requires}
+%endif
 BuildRequires: gcc
 BuildRequires: make
 
 %{?systemd_requires}
-Requires:      bash
 
 %description
 This package provides simple mock service that serves for katello-tracer testing
